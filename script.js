@@ -33,11 +33,13 @@ function currentClock() {
     hr = 12;
   } else if (showTime.getHours() > 12) {
     hr = showTime.getHours() - 12;
+  } else if (showTime.getHours() < 10) {
+    hr = "0" + showTime.getHours();
   } else {
     hr = showTime.getHours();
   }
-  
-//   current time holds results for hr min sec untill it is applied to the dom by the getElementBy ID
+
+  //   current time holds results for hr min sec untill it is applied to the dom by the getElementBy ID
 
   const currentTime = hr + ":" + _min + ":" + sec;
 
@@ -45,52 +47,52 @@ function currentClock() {
 
   document.getElementById("time").innerHTML = currentTime;
   document.getElementById("tod").innerHTML = ampm;
-//   print options to display to the  date and time to the DOM
+  //   print options to display to the  date and time to the DOM
 
   /*  Add Date options */
-   /* dow Day of the week*/
-//    moty Month of the year
-   const dotw = [
-	"Sunday",
-	"Monday",
-	"Tuesday",
-	"Wednesday",
-	"Thursday",
-	"Friday",
-	"Saturday"
+  /* dow Day of the week*/
+  //    moty Month of the year
+  const dotw = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
   ];
-//   const dotw = showTime.getDay("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+  //   const dotw = showTime.getDay("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
 
- const moty = [
-	"January",
-	"February",
-	"March",
-	"April",
-	"May",
-	"June",
-	"July",
-	"August",
-	"September",
-	"October",
-	"November",
-	"December"
+  const moty = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
 
-// const moty = showTime.getMonth("January","Febuary","March","April","May","June","July","August","September","October","November","December");
-
+  // const moty = showTime.getMonth("January","Febuary","March","April","May","June","July","August","September","October","November","December");
 
   day = showTime.getDate();
 
-// store date
-var currentDate = dotw[showTime.getDay()] + ", " + moty[showTime.getMonth()] + " " + day;
+  // store date
+  var currentDate =
+    dotw[showTime.getDay()] + ", " + moty[showTime.getMonth()] + " " + day;
 
-// var currentDate = dotw[] + ", " + moty[] + " " + day;
+  // var currentDate = dotw[] + ", " + moty[] + " " + day;
 
-document.getElementById("date").innerHTML = currentDate;
-};
+  document.getElementById("date").innerHTML = currentDate;
+}
 
 // print time and date once, then update them every second
 currentClock();
-setInterval(function() {
- currentClock()
+setInterval(function () {
+  currentClock();
 }, 1000);
