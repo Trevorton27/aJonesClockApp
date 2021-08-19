@@ -7,25 +7,18 @@
   border: 2px solid black;
   border-radius: 200px;
   border: 50px solid rgb(151, 151, 104);
+  padding: 0.5em;
 }
 
 body {
-  font-family: "Work Sans", cursive;
+  font-family: 'Work Sans', cursive;
   margin-top: -115px;
   background: #3a108a;
   margin-left: 300px;
 }
-/* #digital_Clock {
-  background: rgb(14, 12, 18);
-  color: rgb(80, 83, 36);
-  text-align: center;
-  width: 500px;
-  border: 50px solid rgb(151, 151, 104);
-  padding: 8px;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-} */
+
 #image {
-  background-image: url("./images/time.png");
+  background-image: url('./images/time.png');
   background-repeat: no-repeat;
   background-position: bottom;
   width: 900px;
@@ -40,5 +33,5 @@ body {
   font-size: 22pt;
 }
 #date {
-  font-size: 18pt;
+  font-size: 30pt;
 }
